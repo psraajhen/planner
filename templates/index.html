@@ -4,21 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <style>
+        body {
+            background-image: url('https://as2.ftcdn.net/v2/jpg/03/16/22/15/1000_F_316221512_RldOjXm2O6MiYFXT0pDOBfvZGWckj3L0.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input[type="number"],
+        input[type="text"],
+        input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .balance {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: green;
+        }
+    </style>
 </head>
 <body>
-    <h1>Expense Tracker</h1>
-    <form action="/add_expense" method="post">
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" required><br><br>
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" required><br><br>
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" required><br><br>
-        <label for="payment_method">Payment Method:</label>
-        <input type="text" id="payment_method" name="payment_method" required><br><br>
-        <label for="notes">Notes:</label>
-        <input type="text" id="notes" name="notes"><br><br>
-        <input type="submit" value="Add Expense">
-    </form>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <form action="/add_expense" method="post">
+            <h2>Income</h2>
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" name="salary" required><br><br>
+
+            <h2>Fixed Expenses</h2>
+            <label for="rent">Rent:</label>
+            <input type="number" id="rent" name="rent" required><br><br>
+            <label for="internet">Internet:</label>
+            <input type="number" id="internet" name="internet" required><br><br>
+            <label for="loan">Loan Repayment:</label>
+            <input type="number" id="loan" name="loan" required><br><br>
+            <label for="utilities">Utilities:</label>
+            <input type="number" id="utilities" name="utilities" required><br><br>
+
+            <h2>Variable Expenses</h2>
+            <label for="food_groceries">Food & Groceries:</label>
+            <input type="number" id="food_groceries" name="food_groceries" required><br><br>
+            <label for="transportation">Transportation:</label>
+            <input type="number" id="transportation" name="transportation" required><br><br>
+            <label for="laundry">Laundry/Washing:</label>
+            <input type="number" id="laundry" name="laundry" required><br><br>
+            <label for="entertainment">Entertainment:</label>
+            <input type="number" id="entertainment" name="entertainment" required><br><br>
+            <label for="miscellaneous">Miscellaneous:</label>
+            <input type="number" id="miscellaneous" name="miscellaneous" required><br><br>
+
+            <input type="submit" value="Add Expense">
+        </form>
+
+        {% if balance is not none %}
+        <div class="balance">
+            <h2>Remaining Balance: €{{ balance }}</h2>
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>
