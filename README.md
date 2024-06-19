@@ -54,5 +54,5 @@ If the data is not being saved to the Excel file, check the console output for d
 
 
 ## Author
-- Prana <p.gopalan@qvitec.de>
+- Prana <psraajhen@gmail.com>
 
