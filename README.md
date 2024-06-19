@@ -11,7 +11,7 @@ This is a simple Expense Tracker application built using Flask and Pandas. It al
 
 1. **Clone the Repository** (if applicable)
     ```sh
-    git clone https://github.com/yourusername/expense-tracker.git
+    git clone https://github.com/yourusername/expense-tracker.git](https://github.com/psraajhen/budget.git
     cd expense-tracker
     ```
 
